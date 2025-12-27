@@ -1,5 +1,7 @@
 # LaTeX Agent `SKILL` (arXiv ML/AI Review Papers)
 
+English · [简体中文](README.zh-CN.md)
+
 > [!NOTE]
 > This repo implements a `.codex` `SKILL`: an end-to-end, issues-driven workflow that scaffolds an **IEEEtran two-column LaTeX project** for **ML/AI review articles on arXiv.org**, with **verified BibTeX citations**.
 > Experimental Claude Code support is provided via `.claude` → `.codex`.
