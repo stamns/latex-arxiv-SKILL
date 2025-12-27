@@ -128,38 +128,39 @@ Be specific and quantitative about your findings. Avoid citations in the abstrac
 Example citation: Previous work \cite{author2023paper} has shown...]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% RELATED WORK
+% BACKGROUND
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Related Work}
+\section{Background and Preliminaries}
 [This section should:
-- Review the most relevant prior work thoroughly
-- Group related approaches together
-- Highlight limitations of existing methods
-- Explain how your work differs from or builds upon previous approaches
-- Use citations for all key claims \cite{author2022method}]
+- Define core terms and problem settings (with citations)
+- Provide historical context (timeline is often useful)
+- Clarify what is in-scope vs out-of-scope for this review
+- Introduce the main families of approaches at a high level
+- Use citations for all key claims \cite{smith2022deep}]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% METHODOLOGY
+% BUILDING BLOCKS / TAXONOMY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Methodology}
-[Describe your approach in detail. This section may include:
-- The problem formulation or task definition
-- Your proposed method or algorithm
-- Technical details and mathematical formulations
-- Implementation details
-- Example mathematical equation:]
+\section{Building Blocks}
+[This section should:
+- Break down the topic into reusable components (data, architectures, objectives, inference)
+- Present a taxonomy and explain why it is useful
+- Provide representative papers for each component/family
+- Define all symbols if using equations
+- Example mathematical equation placeholder (replace with a topic-relevant one):]
 
 \begin{equation}
     \mathcal{L}(\theta) = \mathbb{E}_{(x,y) \sim \mathcal{D}} [L(f_\theta(x), y)]
 \end{equation}
 
-[You can include subsections to organize the content:]
+\subsection{Core Definitions}
+[Define the key terms and assumptions used throughout the review]
 
-\subsection{Problem Formulation}
-[Define the problem formally]
+\subsection{Taxonomy and Design Choices}
+[Describe the major model families and design tradeoffs; include citations for each category]
 
-\subsection{Proposed Approach}
-[Describe your method]
+\subsection{Implementation Notes (Optional)}
+[If helpful, summarize common implementation patterns from the literature (e.g., training tricks, scaling behavior)]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FIGURES & DIAGRAMS
@@ -170,7 +171,8 @@ Example citation: Previous work \cite{author2023paper} has shown...]
     \begin{tikzpicture}[
         scale=0.8, transform shape,
         node distance=0.7cm,
-        box/.style={rectangle, rounded corners, draw, fill=#1, text=black, 
+        % Prefer low-saturation fills for readability in two-column papers.
+        box/.style={rectangle, rounded corners, draw, fill=#1!15, text=black,
             minimum width=3.8cm,
             minimum height=0.8cm,
             align=center, font=\sffamily\footnotesize}
@@ -190,49 +192,68 @@ Example citation: Previous work \cite{author2023paper} has shown...]
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% EXPERIMENTS
+% FRONTIER MODELS / SYSTEMS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Experiments}
-[This section should describe:
-- Datasets used
-- Evaluation metrics
-- Implementation details
-- Baseline methods for comparison
-- Experimental setup
-- Results and analysis]
+\section{Frontier Models and Systems}
+[This section should:
+- Summarize what qualifies as ``frontier'' for this topic (define ``latest'' and cutoffs)
+- Compare leading systems by capability, data/compute disclosures, and reproducibility
+- Include a timeline or table of major releases (with citations)]
 
-\subsection{Experimental Setup}
-[Describe your datasets, metrics, and implementation details]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EVALUATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Evaluation and Benchmarks}
+[This section should:
+- Describe common benchmarks, protocols, and metrics (with citations)
+- Discuss strengths/weaknesses of evaluation setups
+- Summarize reproducible comparisons when available]
 
-\subsection{Results and Analysis}
-[Present and analyze your results]
+\subsection{Benchmarks and Metrics}
+[List the main benchmarks and what they measure]
+
+\subsection{Failure Modes and Robustness}
+[Discuss typical failure modes, bias, and robustness concerns supported by evidence]
 
 % Example table
 \begin{table}[t]
 \centering
-\caption{[Table caption describing the data presented]}
+\caption{[Comparison table caption (models / datasets / metrics / constraints).]}
 \label{tab:results}
 \begin{tabular}{lccc}
 \toprule
 \textbf{Method} & \textbf{Metric 1} & \textbf{Metric 2} & \textbf{Metric 3} \\
 \midrule
-Baseline 1 & 0.XX & 0.XX & 0.XX \\
-Baseline 2 & 0.XX & 0.XX & 0.XX \\
-Our Method & \textbf{0.XX} & \textbf{0.XX} & \textbf{0.XX} \\
+Model A \cite{author2023paper} & 0.XX & 0.XX & 0.XX \\
+Model B \cite{jones2023transformer} & 0.XX & 0.XX & 0.XX \\
+Model C \cite{zhang2024large} & \textbf{0.XX} & \textbf{0.XX} & \textbf{0.XX} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CONCLUSION
+% SAFETY / PROVENANCE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Conclusion}
-[Summarize your main findings, contributions, and their implications. Discuss limitations and potential future work.]
+\section{Safety and Provenance}
+[This section should:
+- Cover safety, misuse, privacy, and governance considerations (with citations)
+- Discuss provenance approaches (watermarking, metadata, detection) when relevant
+- Distinguish evidence-backed claims from open questions]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OPEN CHALLENGES + CONCLUSION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Open Challenges and Conclusion}
+\subsection{Open Challenges}
+[List concrete open problems and why they matter; cite relevant evidence or position papers]
+
+\subsection{Conclusion}
+[Summarize the review's takeaways. Do not introduce new claims without citations.]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BIBLIOGRAPHY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{ieeetr}  
-\bibliography{references} % References are in references.bib file
+\bibliography{ref} % References are in ref.bib
 
 \end{document} 

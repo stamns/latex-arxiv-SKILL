@@ -1,0 +1,4 @@
+ID,Phase,Title,Description,Target_Citations,Visualization,Acceptance,Status,Verified_Citations,Notes
+R1,Research,<task>,<short description>,0,N/A,<acceptance>,TODO,0,Duplicate rows as needed
+W1,Writing,<section title>,<write this section per approved outline>,<n>,<viz>,<acceptance>,TODO,0,Duplicate per section
+Q1,QA,<check>,<what to verify>,0,N/A,<acceptance>,TODO,0,Duplicate per QA item
