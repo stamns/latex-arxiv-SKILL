@@ -51,3 +51,4 @@ created_at: <ISO8601 timestamp>
 - Path: issues/<YYYY-MM-DD_HH-mm-ss>-<slug>.csv
 - Must share the same timestamp/slug as this plan
 - This CSV is the execution contract: update issue status as you write and QA
+- Issues may be added/split/inserted during execution; re-validate after edits and keep going until all issues are `DONE`/`SKIP` (when feasible, in the same run).

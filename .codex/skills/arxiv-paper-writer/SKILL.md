@@ -45,7 +45,7 @@ metadata:
 1. **No prose in `main.tex`** until plan approved AND issues CSV exists.
 2. First deliverable: research snapshot + outline + clarification questions + draft plan.
 3. **Use plan + issues tracking for all new papers; do not opt out.**
-4. Issues CSV is the execution contract; update `Status` and `Verified_Citations` per issue.
+4. Issues CSV is the execution contract; update `Status` and `Verified_Citations` per issue, and add/split/insert issue rows when scope grows (do not do untracked work).
 5. **Template is fixed**: use IEEEtran two-column layout (`assets/template/IEEEtran.cls`).
    Treat two-column width as a layout constraint (use two-column floats when needed).
 
@@ -64,6 +64,7 @@ metadata:
 6. Update the plan file to reflect the framework, proposed titles, and section/subsection plan.
 7. Compile early to surface LaTeX errors:
    `python3 scripts/compile_paper.py --project-dir <paper>`
+   - To count main-text pages (excluding references), run with `--report-page-counts` and add a bibliography-start label in `main.tex` (recommended: `\AddToHook{env/thebibliography/begin}{\label{ReferencesStart}}`).
    - After compiling, scan `main.log` for `Overfull \hbox` warnings and fix them (e.g., switch to `figure*`/`table*` for wide content, size to `\textwidth` instead of `\columnwidth`, or adjust table column widths / `\tabcolsep`).
 8. Return to user:
     - Proposed outline (5-8 sections, 2-4 bullets each)
@@ -82,10 +83,11 @@ metadata:
    python3 scripts/validate_paper_issues.py <paper>/issues/<timestamp>-<slug>.csv
    ```
 4. If literature notes are enabled, keep short summaries and (optional) abstract snippets to avoid re-search.
-5. The plan may evolve; update the issues CSV accordingly and re‑validate it regularly.
+5. The plan may evolve; add/split/insert issues as needed, re‑validate after edits, and keep going until all issues (including inserted ones) are `DONE` or `SKIP` (when feasible, in the same run).
 
 ### Phase 2: Per-Issue Writing Loop
 For each writing issue in the CSV:
+- If an issue balloons (new figure, new subsection, new benchmark set, or a large QA fix), split/insert new issue row(s) (e.g., `W6a`, `Q5`) before proceeding; re-run `python3 scripts/validate_paper_issues.py <issues.csv>`; keep going until all issues are `DONE`/`SKIP`.
 1. **Research**: 8-12 section-specific papers.
 2. **Write**: Never 3 sentences without citations; varied paragraph rhythm
    (see `references/writing-style.md`).
@@ -134,7 +136,8 @@ python3 scripts/create_paper_plan.py --topic "<topic>" --stage issues --timestam
 pdflatex main.tex && bibtex main && pdflatex main.tex && pdflatex main.tex
 ```
 - Exit 0, no "Citation undefined" warnings, page count within limit.
-Alternative: `python3 scripts/compile_paper.py --project-dir <paper>`
+- Alternative: `python3 scripts/compile_paper.py --project-dir <paper>`
+- Main-text page count (excluding references): `python3 scripts/compile_paper.py --project-dir <paper> --report-page-counts` (requires a bibliography-start label; default `ReferencesStart`; use "Main text pages (exclude ref-start page)").
 
 **Quality Metrics**:
 - 6-10 pages of main text (references excluded)

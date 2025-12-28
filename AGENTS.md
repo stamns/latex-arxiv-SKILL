@@ -15,6 +15,7 @@ This repo uses an **issues‑driven paper writing workflow** for arXiv LaTeX rev
 ## Non‑negotiable rules
 - **No prose before approval**: do not write into `main.tex` until plan approved and issues CSV exists.
 - **Issues CSV is the contract**: update it as you progress; only mark DONE when criteria met.
+- **Insert issues when scope grows**: if a new non-trivial task is discovered mid-run, add/split/insert an issue row and keep going until all issues are `DONE`/`SKIP` (re-validate after edits).
 - **Citations must be verified**: every citation must be checked against an online source before adding to `ref.bib`.
 - **LaTeX is required**: compile and resolve errors before delivery.
 - **Keep issues CSV valid**: re‑validate after edits.
