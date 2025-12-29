@@ -1,9 +1,3 @@
----
-mode: paper-plan
-topic: <paper topic>
-created_at: <ISO8601 timestamp>
----
-
 # Paper Plan: <paper topic>
 
 ## Goal
@@ -48,7 +42,7 @@ created_at: <ISO8601 timestamp>
 - Visualization plan (types + placement):
 
 ## Issue CSV
-- Path: issues/<YYYY-MM-DD_HH-mm-ss>-<slug>.csv
+- Path: <paper_dir>/issues/<YYYY-MM-DD_HH-mm-ss>-<slug>.csv
 - Must share the same timestamp/slug as this plan
 - This CSV is the execution contract: update issue status as you write and QA
 - Issues may be added/split/inserted during execution; re-validate after edits and keep going until all issues are `DONE`/`SKIP` (when feasible, in the same run).

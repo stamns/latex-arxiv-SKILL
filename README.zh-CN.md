@@ -8,7 +8,7 @@
 
 ## 这里有什么
 
-- **端到端工作流**：issue-driven 论文写作（plan → issues CSV → 按 issue 写作 → QA/编译）。
+- **端到端工作流**：issue-driven 论文写作（生成 plan → 用户确认 → 生成 issues CSV → 按 issue 写作 → rhythm refinement（节奏润色） → QA/编译）。
 - **主要 `SKILL`**：`arxiv-paper-writer` 位于 `.codex/skills/arxiv-paper-writer/SKILL.md`。
 - **辅助脚本**：脚手架、规划、校验、编译位于 `.codex/skills/arxiv-paper-writer/scripts/`。
 - **示例输出**：`example/` 中的一篇生成论文（包括 `example/main.pdf`）。
@@ -18,7 +18,7 @@
 
 ## 快速开始（两条 prompt → 可编译的示例论文）
 
-本仓库的 `example/` 论文通过 **两条用户 prompt** 激活 `arxiv-paper-writer` `SKILL` 生成。
+本仓库的 `example/v0-single-SKILL` 论文通过 **两条用户 prompt** 激活 `arxiv-paper-writer` `SKILL` 生成。
 
 ### Prompt 1（开始论文）
 

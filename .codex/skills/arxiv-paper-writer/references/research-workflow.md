@@ -21,6 +21,7 @@ Purpose: build a verified, scoped literature base without over-collecting or dri
 - Start from recent surveys and highly cited anchors
 - Expand using keywords from the approved outline
 - Verify and add to `ref.bib` immediately
+- For arXiv candidates, use `arxiv_registry.py` to cache searches/BibTeX and avoid duplicates
 - Avoid bulk dumps; prefer incremental, section-driven additions
 
 ### Phase 2: Per-section discovery (during writing)

@@ -20,6 +20,7 @@ Protocol:
 3. Open the source page (venue/arXiv/DOI) and confirm metadata
 4. Add to `ref.bib` only after verification
 5. Cite immediately in text
+   - For arXiv entries, use `arxiv_registry.py export-bibtex` to populate `ref.bib` (stable keys, dedup)
 
 Citation density:
 - Never 3 consecutive sentences without citations

@@ -13,6 +13,10 @@ Purpose: ensure coherence and consistency before delivery. Do NOT create a separ
 - Citation density meets section targets
 - BibTeX entries are clean (correct fields, escaped special characters)
 
+## Writing-style checks
+- No 3 consecutive sentences without citations (abstracts exempted)
+- Rhythm refinement completed in Phase 2.5 (before QA)
+
 ## Visual checks
 - All figures/tables referenced in text
 - Two-column sizing respected; no overflow
@@ -25,6 +29,6 @@ Purpose: ensure coherence and consistency before delivery. Do NOT create a separ
 - Symbols and variables defined before use
 
 ## Delivery checks
-- Page count within target (main text only): run `python3 scripts/compile_paper.py --project-dir <paper> --report-page-counts` (requires a bibliography-start label; default `ReferencesStart`) and use "Main text pages (exclude ref-start page)".
+- Page count within target (main text only): from this skill folder, run `python3 scripts/compile_paper.py --project-dir <paper_dir> --report-page-counts` (requires a bibliography-start label; default `ReferencesStart`) and use "Main text pages (exclude ref-start page)".
 - No untracked work: any newly discovered non-trivial task exists as an issue row and is `DONE`/`SKIP` (with a short note if `SKIP`).
 - No compilation errors (or LaTeX syntax validated if no compiler)
