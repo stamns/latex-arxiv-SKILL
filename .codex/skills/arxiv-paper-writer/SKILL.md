@@ -165,6 +165,7 @@ Fix `Overfull \hbox` warnings before marking issues `DONE`:
 |-------|--------|
 | Research | Rx: discovery, scaffolding, framework, viz planning |
 | Writing | Wx: each section with target citations and visualization |
+| Refinement | RFx: apply `latex-rhythm-refiner` skill (after all Wx DONE) |
 | QA | Qx: citation verification, QA checklist, compilation, final review |
 
 Status: `TODO` → `DOING` → `DONE`. Schema validated by `validate_paper_issues.py`.

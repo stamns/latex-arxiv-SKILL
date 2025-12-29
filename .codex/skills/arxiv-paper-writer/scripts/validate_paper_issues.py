@@ -21,7 +21,7 @@ REQUIRED_COLUMNS = [
 ]
 
 ALLOWED_STATUS = {"TODO", "DOING", "DONE", "SKIP"}
-ALLOWED_PHASES = {"Research", "Writing", "QA"}
+ALLOWED_PHASES = {"Research", "Writing", "Refinement", "QA"}
 
 
 def fail(message: str) -> int:
@@ -66,7 +66,7 @@ def main() -> int:
     total_target_citations = 0
     total_verified_citations = 0
     status_counts = {"TODO": 0, "DOING": 0, "DONE": 0, "SKIP": 0}
-    phase_counts = {"Research": 0, "Writing": 0, "QA": 0}
+    phase_counts = {"Research": 0, "Writing": 0, "Refinement": 0, "QA": 0}
     errors = 0
     warnings = 0
 
@@ -132,7 +132,13 @@ def main() -> int:
     print("Validation passed!")
     print(f"\nSummary:")
     print(f"  Total issues: {len(rows) - 1}")
-    print(f"  By phase: Research={phase_counts['Research']}, Writing={phase_counts['Writing']}, QA={phase_counts['QA']}")
+    print(
+        "  By phase: "
+        f"Research={phase_counts['Research']}, "
+        f"Writing={phase_counts['Writing']}, "
+        f"Refinement={phase_counts['Refinement']}, "
+        f"QA={phase_counts['QA']}"
+    )
     print(f"  By status: TODO={status_counts['TODO']}, DOING={status_counts['DOING']}, DONE={status_counts['DONE']}, SKIP={status_counts['SKIP']}")
     print(f"  Target citations: {total_target_citations}")
     print(f"  Verified citations: {total_verified_citations}")
